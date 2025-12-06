@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home Delivery - Coffee Shop</title>
+  <link rel="stylesheet" href="delivery.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: auto;
+    }
+    label {
+      font-weight: bold;
+    }
+    input, textarea, select, button {
+      padding: 8px;
+      font-size: 16px;
+    }
+    button {
+      background-color: #6b4f4f;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #543838;
+    }
+    .thank-you {
+      text-align: center;
+      margin-top: 50px;
+      display: none;
+    }
+    .thank-you h1 {
+      color: #6b4f4f;
+    }
+    .thank-you p {
+      font-size: 18px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Home Delivery</h1>
+    <p>Get your favorite coffee delivered to your doorstep!</p>
+  </header>
+
+  <section class="order-form" id="order-form">
+    <h2>Place Your Order</h2>
+    <form id="deliveryForm">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="address">Delivery Address:</label>
+      <textarea id="address" name="address" required></textarea>
+
+      <label for="mobile">Mobile Number:</label>
+      <input type="text" id="mobile" name="mobile" required>
+
+      <label for="coffee">Select Coffee:</label>
+      <select id="coffee" name="coffee">
+        <option>Espresso</option>
+        <option>Latte</option>
+        <option>Cappuccino</option>
+        <option>Americano</option>
+      </select>
+
+      <label for="coffee-quantity">Coffee Quantity:</label>
+      <input type="number" id="coffee-quantity" name="coffee-quantity" min="1" value="1">
+
+      <label for="snacks">Select Snacks:</label>
+      <select id="snacks" name="snack">
+        <option>Croissant</option>
+        <option>Muffin</option>
+        <option>Donut</option>
+        <option>Cookie</option>
+      </select>
+
+      <label for="snack-quantity">Snack Quantity:</label>
+      <input type="number" id="snack-quantity" name="snack-quantity" min="1" value="1">
+
+      <label for="drinks">Select Drinks:</label>
+      <select id="drinks" name="drink">
+        <option>Iced Tea</option>
+        <option>Lemonade</option>
+        <option>Cold Brew</option>
+        <option>Smoothie</option>
+      </select>
+
+      <label for="drink-quantity">Drink Quantity:</label>
+      <input type="number" id="drink-quantity" name="drink-quantity" min="1" value="1">
+
+      <button type="submit">Submit Order</button>
+    </form>
+  </section>
+
+  <section class="thank-you" id="thank-you">
+    <h1>Thank You for Your Order!</h1>
+    <p>Your coffee and snacks are on the way. ☕🍩</p>
+    <button onclick="location.reload()">Place Another Order</button>
+  </section>
+
+  <script>
+    const form = document.getElementById('deliveryForm');
+    const orderFormSection = document.getElementById('order-form');
+    const thankYouSection = document.getElementById('thank-you');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent page reload
+      orderFormSection.style.display = 'none'; // Hide form
+      thankYouSection.style.display = 'block'; // Show thank you message
+    });
+  </script>
+</body>
+</html>

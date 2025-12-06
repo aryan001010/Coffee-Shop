@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coffee Haven – Payment</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+  * {box-sizing: border-box;}
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f8f3ee;
+    color: #333;
+  }
+
+  header {
+    background: #4b2e2e;
+    color: #fff;
+    padding: 1rem 2rem;
+    text-align: center;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    animation: fadeIn 0.8s ease;
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  h2 {
+    margin-top: 0;
+    color: #4b2e2e;
+  }
+
+  .order-summary {
+    background: #f1e4d4;
+    padding: 1rem;
+    border-radius: 0.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .order-summary p {
+    margin: 0.4rem 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 600;
+  }
+
+  form input, form select {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 0.4rem;
+    margin-top: 0.3rem;
+    font-size: 1rem;
+  }
+
+  .payment-methods {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .payment-methods label {
+    font-weight: normal;
+  }
+
+  button {
+    margin-top: 1.5rem;
+    width: 100%;
+    background: #4b2e2e;
+    color: #fff;
+    border: none;
+    padding: 0.9rem;
+    font-size: 1.1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  button:hover {
+    background: #693f3f;
+  }
+
+  footer {
+    text-align: center;
+    padding: 1rem;
+    color: #888;
+  }
+</style>
+</head>
+<body>
+
+<header>Coffee Haven – Secure Payment</header>
+
+<div class="container">
+  <h2>Order Summary</h2>
+  <div class="order-summary">
+    <p><span>Caramel Latte x 2</span><span>₹240</span></p>
+    <p><span>Blueberry Muffin x 1</span><span>₹90</span></p>
+    <hr>
+    <p><strong>Total</strong><strong>₹330</strong></p>
+  </div>
+
+  <h2>Billing Details</h2>
+  <form id="paymentForm">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" required>
+
+    <label for="address">Delivery Address</label>
+    <input type="text" id="address" required>
+
+    <label>Payment Method</label>
+    <div class="payment-methods">
+      <label><input type="radio" name="method" value="card" required> Card</label>
+      <label><input type="radio" name="method" value="upi"> UPI</label>
+      <label><input type="radio" name="method" value="cod"> Cash on Delivery</label>
+    </div>
+
+    <div id="cardDetails" style="display:none;">
+      <label for="cardNumber">Card Number</label>
+      <input type="text" id="cardNumber" maxlength="16">
+      <label for="expiry">Expiry Date</label>
+      <input type="month" id="expiry">
+      <label for="cvv">CVV</label>
+      <input type="password" id="cvv" maxlength="4">
+    </div>
+
+    <button type="submit">Pay Now</button>
+  </form>
+</div>
+
+<footer>© 2025 Coffee Haven. All rights reserved.</footer>
+
+<script>
+  // Toggle card details visibility
+  const methodRadios = document.querySelectorAll('input[name="method"]');
+  const cardDetails = document.getElementById('cardDetails');
+
+  methodRadios.forEach(radio => {
+    radio.addEventListener('change', () => {
+      cardDetails.style.display = (radio.value === 'card') ? 'block' : 'none';
+    });
+  });
+
+  // Simple submit handler
+  document.getElementById('paymentForm').addEventListener('submit', e => {
+    e.preventDefault();
+    alert("Thank you for your order! Your payment is being processed.");
+  });
+</script>
+
+</body>
+</html>

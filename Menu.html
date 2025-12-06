@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Coffee Shop Menu</title>
+    <link rel="stylesheet" href="c.css">
+  <style>
+  </style>
+</head>
+<body>
+
+  <h1>Our Coffee, Snacks & Drinks Menu</h1>
+
+  <div class="tabs">
+    <button onclick="filterCategory('all')" class="active">All</button>
+    <button onclick="filterCategory('coffee')">Coffee</button>
+    <button onclick="filterCategory('snack')">Snacks</button>
+    <button onclick="filterCategory('drink')">Drinks</button>
+  </div>
+
+  <div class="container">
+    <div class="menu" id="menu"></div>
+    <div class="cart">
+      <h2>Your Cart</h2>
+      <div id="cart-items"></div>
+      <div class="cart-total" id="cart-total">Total: $0.00</div>
+      <button class="order-button" onclick="placeOrder()">Order Now</button>
+    </div>
+  </div>
+
+  <script>
+   const items = [
+  { name: "Espresso", price: 208, category: "coffee", img: "e.jpeg" },
+  { name: "Latte", price: 291, category: "coffee", img: "1.jpeg" },
+  { name: "Cappuccino", price: 311, category: "coffee", img: "2.jpeg" },
+  { name: "Mocha", price: 332, category: "coffee", img: "10.jpeg" },
+  { name: "Blueberry Muffin", price: 187, category: "snack", img: "3.webp" },
+  { name: "Croissant", price: 229, category: "snack", img: "33.jpg" },
+  { name: "Banana Bread", price: 208, category: "snack", img: "8.jpeg" },
+  { name: "Choco Chip Cookie", price: 146, category: "snack", img: "9.jpg" },
+  { name: "Iced Tea", price: 208, category: "drink", img: "6.jpg" },
+  { name: "Strawberry Smoothie", price: 328, category: "drink", img: "7.jpg" },
+  { name: "Hot Chocolate", price: 270, category: "drink", img: "4.jpeg" },
+];
+
+function renderMenu(filter = 'all') {
+  const menu = document.getElementById('menu');
+  menu.innerHTML = '';
+  items.filter(item => filter === 'all' || item.category === filter).forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'item-card';
+    card.innerHTML = `
+      <img src="${item.img}" alt="${item.name}" />
+      <div class="item-info">
+        <div class="item-name">${item.name}</div>
+        <div class="item-price">₹${item.price}</div>
+        <button onclick="addToCart('${item.name}')">Add to Cart</button>
+      </div>
+    `;
+    menu.appendChild(card);
+  });
+}
+
+function renderCart() {
+  const cartItems = document.getElementById('cart-items');
+  const total = document.getElementById('cart-total');
+  cartItems.innerHTML = '';
+  let sum = 0;
+  for (let name in cart) {
+    const item = cart[name];
+    sum += item.quantity * item.price;
+    cartItems.innerHTML += `
+      <div class="cart-item">
+        <span>${item.name} (₹${item.price})</span>
+        <div>
+          <button onclick="changeQuantity('${item.name}', -1)">-</button>
+          <input type="text" value="${item.quantity}" readonly>
+          <button onclick="changeQuantity('${item.name}', 1)">+</button>
+          <button onclick="changeQuantity('${item.name}', -${item.quantity})">Remove</button>
+        </div>
+      </div>
+    `;
+  }
+  total.innerText = `Total: ₹${sum}`;
+}
+
+  </script>
+
+</body>
+</html>

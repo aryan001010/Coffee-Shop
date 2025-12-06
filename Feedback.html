@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coffee Shop Feedback</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3e9dc;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .feedback-container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    h2 {
+      text-align: center;
+      color: #5c4033;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      color: #4e342e;
+      font-weight: bold;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .rating {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .rating input {
+      display: none;
+    }
+
+    .rating label {
+      font-size: 24px;
+      color: #ccc;
+      cursor: pointer;
+    }
+
+    .rating input:checked ~ label,
+    .rating input:hover ~ label {
+      color: #ff9800;
+    }
+
+    .submit-btn {
+      background-color: #795548;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      margin-top: 20px;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #5d4037;
+    }
+  </style>
+</head>
+<body>
+  <div class="feedback-container">
+    <h2>We’d love your feedback!</h2>
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Your email" required>
+
+      <label for="rating">Rating</label>
+      <div class="rating">
+        <input type="radio" name="rating" id="star5" value="5">
+        <label for="star5">&#9733;</label>
+        <input type="radio" name="rating" id="star4" value="4">
+        <label for="star4">&#9733;</label>
+        <input type="radio" name="rating" id="star3" value="3">
+        <label for="star3">&#9733;</label>
+        <input type="radio" name="rating" id="star2" value="2">
+        <label for="star2">&#9733;</label>
+        <input type="radio" name="rating" id="star1" value="1">
+        <label for="star1">&#9733;</label>
+      </div>
+
+      <label for="message">Your Feedback</label>
+      <textarea id="message" rows="4" placeholder="Tell us what you loved or what we can improve!" required></textarea>
+
+      <button class="submit-btn" type="submit">Submit Feedback</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+{
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #fefefe;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .tabs {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .tabs button {
+      margin: 0 5px;
+      padding: 10px 20px;
+      border: none;
+      background: #ccc;
+      cursor: pointer;
+    }
+
+    .tabs button.active {
+      background: #5a3825;
+      color: white;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: 65%;
+    }
+
+    .item-card {
+      border: 1px solid #ddd;
+      padding: 10px;
+      width: 150px;
+      text-align: center;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .item-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .item-info {
+      margin-top: 10px;
+    }
+
+    .item-price {
+      margin: 5px 0;
+    }
+
+    .cart {
+      width: 30%;
+      border-left: 1px solid #ccc;
+      padding-left: 20px;
+    }
+
+    .cart-item {
+      margin-bottom: 10px;
+    }
+
+    .cart-item button {
+      margin: 0 3px;
+    }
+
+    .cart-total {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .order-button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #5a3825;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }

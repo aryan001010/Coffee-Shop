@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Riot&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background-image: url(155209-copper-color-background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+nav{
+    width: 50%;
+    height: 10vh;
+}	
+.shop-name {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #d2911c;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px #000;
+  font-family: 'Protest Riot', cursive;
+}
+
+.nav-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.nav-container .logo img{
+    width: 80px;
+}
+.nav-container .links{
+    display: flex;
+}
+.links .link{
+    position: relative;
+    margin: 0 10px;
+    cursor: pointer;
+}
+nav .buttons{
+    width: 250px;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+  margin: 0 10px; /* Increased horizontal spacing */
+  padding: 10px 20px;
+  width: auto; /* Let buttons size naturally based on content */
+  height: auto;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  background-color: transparent;
+  border: 2px solid transparent;
+  transition: 0.2s linear;
+}
+
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+
+
+section{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+section .content{
+    width: 35%;
+    color: white;
+}
+.content h2{
+    color: #d2911c;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+.content h1{
+    font-size: 4.5rem;
+    font-family: "Protest Riot", sans-serif;
+    font-weight: 100;
+}
+.content h1 span{
+    font-size: 5rem;
+    color: #d2911c;
+    font-family: "Protest Riot", sans-serif;
+    font-weight: 100;
+}
+.content hr{
+    width: 35%;
+    height: 4px;
+    border: none;
+    margin: 10px 0;
+    background:linear-gradient(to right, #d2911c, #49340f) ;
+}
+.content .icons{
+    width: 70%;
+    height: 7vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px 0;
+}
+.icons div{
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icons div i{
+    color: #d2911c;
+    margin-right:10px ;
+    font-size: 3rem;
+}
+section .image img{
+    width: 700px;
+    transform: translate(400px,400px);
+}
